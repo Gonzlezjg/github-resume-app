@@ -1,0 +1,19 @@
+{
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "github-resume-app",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "app/*"
+  ],
+  "devDependencies": {
+    "turbo": "^1.10.15"
+  }
+}
