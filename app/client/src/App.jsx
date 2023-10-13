@@ -1,21 +1,11 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { Paper } from '@mui/material';
+import NavAppBar from './components/AppBar';
 
 function App() {
   return (
-    <>
-      <button
-        onClick={async () => {
-          const res = await fetch('/api');
-          const data = await res.json()
-          console.log(data)
-        }}
-      >
-        click
-      </button>
-    </>
+    <Paper>
+      <NavAppBar />
+    </Paper>
   );
 }
 
