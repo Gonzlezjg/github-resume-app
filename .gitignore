@@ -2,4 +2,4 @@ node_modules
 .turbo
 app/client/node_modules
 app/backend/dist
-app/backend/.env
+app/backend/.dev.env
