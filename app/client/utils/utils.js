@@ -1,3 +1,10 @@
+export const languageColors = {
+  JavaScript: '#f1e05a',
+  TypeScript: '#2b7489',
+  HTML: '#e34c26',
+  CSS: '#563d7c',
+};
+
 export function getMostRecentCommit(commits) {
   const sortCommits = [...commits].sort(
     (a, b) =>
