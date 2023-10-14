@@ -7,7 +7,11 @@ export const githubApi = createApi({
     getHistoryOfCommits: builder.query({
       query: () => `github-ch`,
     }),
+    getReposByName: builder.query({
+      query: (name) => `github-ch/${name}`,
+    }),
   }),
 });
 
-export const { useGetHistoryOfCommitsQuery } = githubApi;
+export const { useGetHistoryOfCommitsQuery, useGetReposByNameQuery } =
+  githubApi;

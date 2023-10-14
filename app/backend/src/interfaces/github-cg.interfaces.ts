@@ -17,10 +17,22 @@ interface Commit {
   };
 }
 
-interface IRepo {
+interface ICommits {
   sha: string;
   commit: Commit;
   author: User;
 }
 
-export default IRepo;
+interface IProject {
+  name: string;
+  full_name: string;
+  description: string;
+  language: Record<string, number>;
+  languages_url: string;
+  visibility: string;
+  owner: {
+    avatar_url: string;
+  };
+}
+
+export { IProject, ICommits };
