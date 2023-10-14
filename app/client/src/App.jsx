@@ -70,11 +70,8 @@ function App() {
 
       <Box sx={{ flexGrow: 1, my: 4, px: 4 }}>
         <Grid container spacing={2}>
-          <Grid xs={8}>
+          <Grid sx={6} md={8}>
             <Box
-              sx={{
-                width: '100%',
-              }}
             >
               {isLoading ? (
                 <Skeleton height={'100%'} />
@@ -83,7 +80,7 @@ function App() {
               )}
             </Box>
           </Grid>
-          <Grid xs={4}>
+          <Grid sx={4} md={4}>
             <Box display="flex" flexDirection="column" gap={2}>
               <Typography
                 fontFamily={'Roboto'}

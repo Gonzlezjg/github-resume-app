@@ -3,3 +3,4 @@ node_modules
 app/client/node_modules
 app/backend/dist
 app/backend/.dev.env
+.dev.env

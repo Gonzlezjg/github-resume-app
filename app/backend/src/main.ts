@@ -10,6 +10,8 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   app.use(morgan('dev'));
   app.setGlobalPrefix('/api');
-  await app.listen(configService.get('PORT'));
+  await app.listen(configService.get('PORT') || 3000);
+
+  console.log('servidor en ', await app.getUrl());
 }
 bootstrap();

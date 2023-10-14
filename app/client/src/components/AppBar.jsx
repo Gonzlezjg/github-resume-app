@@ -54,7 +54,7 @@ const NavAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Commits History
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
         </Toolbar>

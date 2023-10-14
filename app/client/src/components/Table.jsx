@@ -5,13 +5,17 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Avatar, Box, Chip, Stack, Typography, styled } from '@mui/material';
+import { Avatar, Chip, Stack, Typography, styled } from '@mui/material';
 import { getMostRecentCommit, timeFormat } from '../../utils/utils';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.background.paper,
-    border: `1px solid #30363D`,
+    border: '1px solid #30363D',
+  },
+  [`&.${tableCellClasses.body}`]: {
+    borderLeft: '1px solid #30363D',
+    borderBottom: '1px solid #30363D',
   },
 }));
 
@@ -24,10 +28,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+const StyledSecondColumn = styled(TableCell)(() => ({
+  [`&.${tableCellClasses.body}`]: {
+    borderRight: '1px solid #30363D',
+  },
+}));
+
 export default function CommitsTable({ rows }) {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer
+      component={Paper}
+      sx={{ maxHeight: '100vh', overflow: 'auto' }}
+    >
+      <Table stickyHeader sx={{ minWidth: 550 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <StyledTableCell colSpan={2}>
@@ -88,12 +101,12 @@ export default function CommitsTable({ rows }) {
         <TableBody>
           {rows?.map((history) => (
             <StyledTableRow key={history.name}>
-              <TableCell component="th" scope="row">
+              <StyledTableCell component="th" scope="row">
                 {history.commit.message}
-              </TableCell>
-              <TableCell align="right">
+              </StyledTableCell>
+              <StyledSecondColumn align="right">
                 {timeFormat(history.commit.author.date)}
-              </TableCell>
+              </StyledSecondColumn>
             </StyledTableRow>
           ))}
         </TableBody>
